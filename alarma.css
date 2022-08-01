@@ -1,0 +1,437 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("http://fonts.cdnfonts.com/css/e1234");
+@import url("http://fonts.cdnfonts.com/css/the-blast");
+@import url("http://fonts.cdnfonts.com/css/mufflu");
+
+:root {
+  --fn: "Poppins", sans-serif;
+  --fn2: "E1234", sans-serif;
+  --blfont: "The Blast", sans-serif;
+  --mfont: "Mufflu", sans-serif;
+}
+
+audio {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fn);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  border-radius: 5px;
+  width: 90%;
+  row-gap: 24px;
+  position: absolute;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  transition: 0.6s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 21px;
+  box-shadow: 35px 35px 68px 0px rgba(145, 192, 255, 0.5),
+    inset -10px -10px 16px 0px rgba(145, 192, 255, 0.6),
+    inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
+
+.form p {
+  font-size: 12px;
+  font-weight: 600;
+  color: #161616;
+  text-align: center;
+}
+
+.formOn {
+  top: 50%;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.title {
+  border: inherit;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  background: #91c0ff;
+  border-radius: 5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  color: #161616;
+  text-transform: uppercase;
+  background: white;
+}
+
+body {
+  overflow: hidden;
+}
+
+.all {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.slide1 {
+  background: #91c0ff;
+  transition: 0.4s ease-in-out;
+}
+
+.slide2 {
+  background: #d6efff;
+  transition: 0.4s ease-in-out;
+}
+
+.slide {
+  position: relative;
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease-in-out;
+  right: 0;
+  overflow: hidden;
+}
+
+.slide1An {
+  right: 100%;
+}
+
+.slide2An {
+  right: 100%;
+}
+
+.notify {
+  width: 90%;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -30px;
+  font-size: 14px;
+  padding: 10px 7px;
+  left: 50%;
+  transition: 0.4s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%);
+  background: rgba(74, 144, 226, 1);
+  backdrop-filter: blur(10px);
+  border-radius: 7px;
+  color: white;
+}
+
+.ringtone {
+  position: absolute;
+  bottom: 40px;
+  opacity: 0;
+  pointer-events: none;
+  font-size: 12px;
+  padding: 7px 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  font-weight: 500;
+  transition: 0.6s ease-in-out;
+  color: #191919;
+  border-radius: 50px;
+  backdrop-filter: blur(9px);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 30px 68px 0px rgba(74, 144, 226, 0.5),
+    inset 0px -12px 16px 0px rgba(74, 144, 226, 0.6),
+    inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
+
+.ringtoneOn {
+  opacity: 1;
+  bottom: 110px;
+  pointer-events: all;
+}
+
+.notify-on {
+  opacity: 1;
+  pointer-events: all;
+  top: 30px;
+}
+
+.open {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  border-radius: 50%;
+  transition: 0.7s ease-in-out;
+  border: none;
+  border-radius: 50%;
+  backdrop-filter: blur(9px);
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 41px;
+  box-shadow: 35px 35px 68px 0px rgba(145, 192, 255, 0.5),
+    inset -10px -10px 16px 0px rgba(145, 192, 255, 0.6),
+    inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
+
+.openAct {
+  top: 90%;
+}
+
+.open svg {
+  width: 100%;
+  transition: inherit;
+  height: 100%;
+  transform: rotate(0deg);
+  fill: #91c0ff;
+}
+
+.openAct svg {
+  transform: rotate(135deg);
+}
+
+.form-grp {
+  position: relative;
+  border: inherit;
+}
+
+.form-grp input {
+  width: 100%;
+  padding: 10px 9px;
+  outline: none;
+  border: inherit;
+  border-radius: 5px;
+  background: transparent;
+  box-shadow: 0 5px 17px -6px #91c0ff;
+}
+
+.form-grp label {
+  font-size: 12px;
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transition: 0.4s ease-in-out;
+  transform: translateY(-50%);
+  color: #161616;
+  font-weight: 500;
+}
+
+.form-grp .error {
+  font-size: 10px;
+  color: red;
+  font-weight: 600;
+  position: absolute;
+  bottom: -15px;
+  right: 0;
+  transition: 0.4s ease-in-out;
+  opacity: 0;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  font-size: 10px;
+  left: 0;
+  top: -8px;
+}
+
+.form button {
+  border-radius: 5px;
+  border: none;
+  padding: 7px;
+  background: #91c0ff;
+  border-radius: 5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  color: #161616;
+  text-transform: uppercase;
+}
+
+.slide2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.slide2 h2 {
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  color: #4a90e2;
+  transform: translateX(-50%);
+}
+
+.slide2 .time {
+  display: flex;
+  width: 95%;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  column-gap: 10px;
+  position: absolute;
+  padding: 15px 10px;
+  top: 80px;
+  left: 50%;
+  color: #161616;
+  transform: translateX(-50%);
+  backdrop-filter: blur(9px);
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  box-shadow: 0px 30px 68px 0px rgba(74, 144, 226, 0.5),
+    inset 0px -12px 16px 0px rgba(74, 144, 226, 0.6),
+    inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
+
+.slide2 .time p {
+  font-size: 25px;
+  color: rgba(74, 144, 226, 0.5) ;
+}
+
+.slide2 h3 {
+  font-size: 15px;
+  margin: 20px 0;
+  top: 0;
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.4s ease-in-out;
+  position: relative;
+}
+
+.slide2 h3.outH {
+  top: -20px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slide2 .cntdwn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 12px;
+  width: 90%;
+  margin-top: 20px;
+  opacity: 1;
+  transition: 0.6s ease-in-out;
+  position: relative;
+  pointer-events: all;
+  top: 0;
+}
+
+.slide2 .cntdwnOut {
+  pointer-events: none;
+  top: -50px;
+  opacity: 0;
+}
+
+.slide2 .cntdwn p {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+}
+
+.slide2 .cntdwn p:not(:last-of-type) span {
+  position: relative;
+}
+
+.slide2 .cntdwn p:not(:last-of-type) span::before {
+  position: absolute;
+  content: " : ";
+  font-size: 17px;
+  top: 0%;
+  font-family: var(--fn2);
+  right: -15px;
+}
+
+.slide2 h4 {
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  font-family: var(--blfont);
+  font-weight: 500;
+  position: relative;
+  transition: 0.7s ease-in-out;
+  top: 0;
+  letter-spacing: 3px;
+  color: rgba(74, 144, 226, 1);
+}
+
+.slide2 h4.on {
+  top: -80px;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.slide2 h4 span {
+  font-size: 14px;
+  font-family: var(--mfont);
+  font-weight: 600;
+  color: #161616;
+}
+
+.slide2 .cntdwn p span {
+  font-size: 47px;
+  font-weight: 700;
+  margin-bottom: 0;
+  line-height: 14px;
+  font-family: var(--fn2);
+}
+
+.slide2 .openB2 {
+  position: absolute;
+  bottom: -30px;
+  opacity: 0;
+  pointer-events: none;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  border-radius: 50%;
+  transition: 0.7s ease-in-out;
+  backdrop-filter: blur(9px);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 30px 68px 0px rgba(74, 144, 226, 0.5),
+    inset 0px -12px 16px 0px rgba(74, 144, 226, 0.6),
+    inset 0px 11px 28px 0px rgb(255, 255, 255);
+  border: none;
+}
+
+.slide2 .openB2 svg {
+  width: 100%;
+  height: 100%;
+  fill: rgba(74, 144, 226, 1);
+}
+
+.slide2 .openB2On {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: all;
+}
