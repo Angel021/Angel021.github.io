@@ -174,7 +174,7 @@ btn.addEventListener("click", () => {
         vib(1);
         btn2.classList.toggle("openB2On");
         ringBtn.classList.toggle("ringtoneOn");
-        aud.classList.click("audio");
+        aud.play();
       }
       dayCnt.innerHTML = diffD;
       hrCnt.innerHTML = diffH;
